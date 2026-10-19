@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: usermgmt-02230138
+spec:
+  clusterIP: None # Headless (no virtual IP)
+  selector:
+    app: postgres # resolves to the Pod's IP
+  ports:
+    - port: 5432
+      name: postgres
